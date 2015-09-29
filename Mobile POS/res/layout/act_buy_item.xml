@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:weightSum="100" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="90" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_buy_border"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/ivCartImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_launcher" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp" >
+
+                        <TextView
+                            android:id="@+id/tvBuyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvBuyDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Description" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:id="@+id/tvUserInfoTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="QUANTITY :"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+      					   <Spinner
+      					       android:id="@+id/spnBuyQuantList"
+      					       android:layout_width="wrap_content"
+      					       android:layout_height="wrap_content"
+      					       android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvBuyPriceAmnt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Price"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBuyIMEI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/item_buy_border"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select IMEI:"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Spinner
+                    android:id="@+id/spnSelectIMEI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/btnBuySelIMEI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IMEI SET" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvBuyImeiSel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="false"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/item_buy_border"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/tvCartOrderTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Payment Mode:"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Spinner
+                    android:id="@+id/spnPaymentMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/payment_options" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSwipeForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/item_buy_border"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="1" >
+
+                    <TableRow
+                        android:id="@+id/tblRowRemitBG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvCartName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reader Status :  " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="left"
+                            android:scrollbars="vertical"
+                            android:singleLine="false"
+                            android:text="Status" />
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvRemitRowCustomer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account Number " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View01"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/tableRow3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvRemitRowAmt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account Name " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View02"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/TableRow01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card Type " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View03"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/TableRow02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CVV " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeCvv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View04"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/TableRow03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView06"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Valid Date " />
+
+                        <TextView
+                            android:id="@+id/tvSwipeDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <View
+                    android:id="@+id/View05"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ddd" />
+
+                <Button
+                    android:id="@+id/btnSwipeCheckout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_item_hover"
+                    android:text="Check Out" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCashForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/item_buy_border"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1" >
+
+                    <TableRow
+                        android:id="@+id/tableRow4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Cash Form"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View06"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ddd" />
+
+                    <TableRow
+                        android:id="@+id/TableRow08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invoice # :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etInvoiceNumCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="text" >
+      					   
+                        	<requestFocus />
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvSalesFilDateTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="First Name :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etFirstNameCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName" >
+
+                            
+                        </EditText>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TableRow04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etLastNameCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TableRow05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/TextView07"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etAddressCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:ems="10"
+                            android:gravity="center_vertical|top"
+                            android:inputType="textMultiLine|textPersonName" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TableRow06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView08"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email add :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etEmailaddCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textEmailAddress|textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TableRow07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView09"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile # :"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <EditText
+                            android:id="@+id/etContactNoCF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName|phone"
+                            android:maxLength="11" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/TextView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Taken By:"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <Spinner
+                            android:id="@+id/spnTakenBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/View08"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="#ddd" />
+
+                    <CheckBox
+                        android:id="@+id/cbPark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reserved" />
+
+                    <View
+                        android:id="@+id/View07"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="#ddd" />
+
+                </TableLayout>
+
+                <Button
+                    android:id="@+id/btnCheckoutCF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_item_hover"
+                    android:text="Check Out" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llSwipeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:background="#444"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total : "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.00"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#1e1" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBuySwipeNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Swipe Now" />
+
+    </LinearLayout>
+
+</LinearLayout>

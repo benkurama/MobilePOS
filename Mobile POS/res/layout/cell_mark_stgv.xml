@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ecf4fa"
+        >
+        
+
+    <FrameLayout
+        android:id="@+id/ffLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+ 		<com.example.redfootpos.object.STGVImageView
+        android:id="@+id/stgvImgMark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ddd"
+        android:scaleType="centerCrop"/>
+		
+
+        <CheckBox
+            android:id="@+id/cbMarkSelect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="right" />
+        
+    </FrameLayout>
+     
+    <TextView
+        android:id="@+id/tvMarkName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ffLayout"
+        android:gravity="center_horizontal"
+        android:text="name" />
+    
+    <TextView
+        android:id="@+id/tvMarkPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMarkName"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:text="PHP 100"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

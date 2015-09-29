@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_buy_border"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tvUserInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Payment Mode:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnSetPaymentMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set Your Payment Mode" />
+
+    </LinearLayout>
+
+</LinearLayout>

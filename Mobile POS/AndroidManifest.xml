@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.redfootpos"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_cp"
+        android:label="@string/app_name"
+        android:name="com.example.redfootpos.Vars"
+        android:theme="@style/AppTheme" >
+        
+        
+        <activity
+            android:name="com.example.redfootpos.MainAct"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+			>
+
+            
+            <intent-filter>
+	            <action android:name="android.intent.action.SEARCH" />
+	        </intent-filter>
+            
+            <meta-data android:name="android.app.searchable"
+	            android:resource="@xml/searchable"/>
+            
+        </activity>
+        
+        <activity android:name=".SearchableActivity" >
+	        <intent-filter>
+	            <action android:name="android.intent.action.SEARCH" />
+	        </intent-filter>
+	        <meta-data android:name="android.app.searchable"
+	            android:resource="@xml/searchable"/>
+    	</activity>
+        
+        <activity 
+            android:name=".ItemDescActivity">
+        </activity>
+        
+        <activity android:name=".LoginAct"
+           		  android:screenOrientation="portrait">
+            <intent-filter>
+	             <action android:name="android.intent.action.MAIN" />
+	             <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service android:name="com.example.redfootpos.object.SendMailService">
+        </service>
+        
+        <provider
+	        android:name=".database.CellphoneContentProvider"
+	        android:authorities="com.example.redfootpos.database.CellphoneContentProvider"
+	        android:exported="true" />
+        
+    </application>
+
+</manifest>
